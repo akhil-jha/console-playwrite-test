@@ -1,0 +1,16 @@
+[project]
+requires-python = ">=3.10"
+dependencies = [
+    "pytest-playwright",
+    "requests",
+    "pytest",
+    "playwright",
+    "dynaconf"
+]
+
+[tool.dynaconf]
+settings_files = ["conf/settings.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
