@@ -3,6 +3,12 @@ from dataclasses import dataclass
 import pytest
 from dynaconf import Dynaconf
 
+
+pytest_plugins = [
+    "fixtures.login",
+]
+
+
 settings = Dynaconf(
     settings_files=["conf/settings.yaml"],
     environments=True,
