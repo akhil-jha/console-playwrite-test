@@ -5,7 +5,8 @@ dependencies = [
     "requests",
     "pytest",
     "playwright",
-    "dynaconf"
+    "dynaconf",
+    "pre-commit"
 ]
 
 [tool.dynaconf]

@@ -1,5 +1,5 @@
 default:
     headless: false
-    username: 
+    username:
     password:
-    base_url: 
+    base_url:
