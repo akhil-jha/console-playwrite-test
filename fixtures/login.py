@@ -7,7 +7,8 @@ from playwright.sync_api import expect
 from playwright.sync_api import Page
 
 
-def _login(page, config):
+@pytest.fixture(scope="function")
+def login_console(page: Page, config: Config):
     page.goto(config.base_url)
     expect(page).to_have_title(re.compile("Log In | Red Hat IDP"))
     page.locator("#truste-consent-buttons").click()
@@ -15,14 +16,5 @@ def _login(page, config):
     page.get_by_role("button", name="Next").click()
     page.locator('input[id="password"]').fill(config.password)
     page.get_by_role("button", name="Log in").click()
-    return page
 
-
-@pytest.fixture(scope="function")
-def login_function(page: Page, config: Config):
-    yield _login(page, config)
-
-
-@pytest.fixture(scope="session")
-def login_session(page: Page, config: Config):
-    yield _login(page, config)
+    yield page

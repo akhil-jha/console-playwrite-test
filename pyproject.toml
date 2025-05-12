@@ -9,6 +9,13 @@ dependencies = [
     "pre-commit"
 ]
 
+name = "console-playwrite-test"
+version = "0.0.1"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["conf*", "fixtures*", "playwright*"]
+
 [tool.dynaconf]
 settings_files = ["conf/settings.yaml"]
 

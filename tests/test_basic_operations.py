@@ -1,3 +1,3 @@
-def test_login(login_function):
-    login_function.wait_for_timeout(10_000)
-    login_function.screenshot(path="loggedin.png")
+def test_login(login_console):
+    login_console.wait_for_timeout(10_000)
+    login_console.screenshot(path="loggedin.png")
